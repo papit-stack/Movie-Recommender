@@ -1,0 +1,127 @@
+/* Full-screen background */
+.signin-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4))
+              ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+/* Bigger, bolder sign-in box */
+.signin-box {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 80px 90px;
+  border-radius: 6px;
+  width: 500px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Title */
+.signin-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Input fields */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-form input {
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 18px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 18px;
+}
+
+.signin-form input::placeholder {
+  color: #8c8c8c;
+}
+
+/* Sign in button */
+.signin-form button {
+  background-color: #e50914;
+  border: none;
+  border-radius: 4px;
+  padding: 18px;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signin-form button:hover {
+  background-color: #f40612;
+}
+
+/* Remember + Forgot Password row (fixed alignment) */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  color: #b3b3b3;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Remember me section */
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.options input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #e50914;
+  cursor: pointer;
+}
+
+/* Forgot password link */
+.options .forgot {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.options .forgot:hover {
+  color: #fff;
+}
+
+/* Signup section */
+.signuptext {
+  margin-top: 60px;
+  font-size: 17px;
+  color: #b3b3b3;
+  text-align: center;
+}
+
+.signuptext span {
+  color: white;
+  cursor: pointer;
+}
+
+.signuptext span:hover {
+  text-decoration: underline;
+}
+.checkbox{
+    position: relative;
+    top: 10px;
+}

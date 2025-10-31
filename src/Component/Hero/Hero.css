@@ -1,0 +1,76 @@
+/* Full hero section background */
+.hero-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4));
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 280px; 
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Title */
+.hero-title h1 {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  background: linear-gradient(180deg, #fff, #cfcfcf, #a1a1a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  white-space: nowrap;      
+  overflow: hidden;         
+  text-overflow: ellipsis;   
+}
+
+
+/* Subtitle text */
+.hero-sub-content p {
+  font-size: 20px;
+  color: #e0e0e0;
+  margin: 6px 0;
+  line-height: 1.6;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Red button styling */
+.hero-btn {
+  margin-top: 35px;
+  background: linear-gradient(90deg, #e50914, #b0060f);
+  border: none;
+  border-radius: 4px;
+  padding: 16px 50px;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+}
+
+/* Button hover and focus states */
+.hero-btn:hover {
+  background: linear-gradient(90deg, #ff0a16, #e50914);
+  box-shadow: 0 0 35px rgba(229, 9, 20, 0.5);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.hero-btn:active {
+  transform: scale(0.97);
+  background: linear-gradient(90deg, #b0060f, #8a050c);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
