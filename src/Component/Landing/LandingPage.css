@@ -79,4 +79,24 @@
 .signin-text span:hover {
   text-decoration: underline;
 }
-
+/*remove for better design*/
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.input-container input {
+  width: 300px;
+  padding: 12px;
+  font-size: 16px;
+}
+.input-container button {
+  width: 320px;
+  padding: 12px;
+  background-color: red;
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}

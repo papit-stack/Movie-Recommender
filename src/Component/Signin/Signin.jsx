@@ -1,24 +1,54 @@
 import React, { useState } from 'react';
 import './Signin.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { toast, ToastContainer } from 'react-toastify';
+import { auth } from '../../firebase';
 const Signin = () => {
+  const navigate=useNavigate();
   const [formData,setFormData]=useState({
     email:'',
     password:''
   })
-  // const validate=(e)=>{
-  //   if(e)
-  // }
+
   const handleChange=(e)=>{
     const {name,value}=e.target;
     setFormData(prev=>({
       ...prev,
       [name]:value
   }))  }
-  const handleSubmit=(e)=>{
+  const handleSubmit=async (e)=>{
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setFormData({email:'',password:''});
+    try{
+      await signInWithEmailAndPassword(auth,formData.email,formData.password);
+      toast.success('🎉 Logged in successfully!', {
+        position: 'top-center',
+        autoClose: 3000,
+        style: {
+          top: '150px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          backgroundColor: '#4BB543',
+          color: '#fff',
+        },
+      });
+      setFormData({email:'',password:''});
+      setTimeout(()=>navigate('/'),2000);
+    }catch(error){
+     if(error.code==='auth/invalid-credential'){
+        toast.error('Either email or password is incorrect.',{position:'top-center',autoClose:3000,  style: {
+        top: '150px',          // distance from the top of the viewport
+        left: '50%',           // center horizontally
+        transform: 'translateX(-50%)', // properly center
+        backgroundColor: '#e7ebe7ff',    // optional custom color
+        color: '#222020ff',                 // text color
+      }
+    })
+      }
+      setFormData({email:'',password:''});
+    }
+
+    
   }
   return (
     <div className="signin-container">
@@ -40,10 +70,11 @@ const Signin = () => {
 
         <div className="signuptext">
           <p>
-            New to our platform? <Link to='/  '><span>Sign up now.</span></Link>
+            New to our platform? <Link to='/signup'><span>Sign up now.</span></Link>
           </p>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };
